@@ -29,7 +29,8 @@ dependencies {
 1. **First of all** Implements `OnPermissionRequest`
 + `onPermissionAllowed()` - Permission allowed, be happy :grimacing:
 + `onPermissionDenied()` - Permission denied, this is not good :fire:
-+ 'onPermissionDeniedButAskAgain(PermissionToken token)' - The user don't allow your request permission, but you can ask again using `token.continuePermissionRequest();` until they click `never ask again`
++ `onPermissionDeniedButAskAgain(PermissionToken token)` - The user don't allow your request permission, but you can ask again using `token.continuePermissionRequest();` until they click `never ask again`
+
 
 
 2. **Request** permission
