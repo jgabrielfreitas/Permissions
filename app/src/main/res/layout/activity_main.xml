@@ -2,32 +2,87 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent">
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Contacts"
         android:id="@+id/contactsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:text="Contacts" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Camera"
         android:id="@+id/cameraButton"
-        android:layout_below="@+id/contactsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/contactsButton"
+        android:text="Camera" />
+
+    <Button
+        android:id="@+id/locationButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/contactsButton"
+        android:layout_toEndOf="@+id/contactsButton"
+        android:layout_toRightOf="@+id/contactsButton"
+        android:text="Location" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Location"
-        android:id="@+id/locationButton"
-        android:layout_alignBottom="@+id/contactsButton"
+        android:text="MICROPHONE"
+        android:id="@+id/audioButton"
+        android:layout_alignBottom="@+id/cameraButton"
         android:layout_toRightOf="@+id/contactsButton"
         android:layout_toEndOf="@+id/contactsButton" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PHONE"
+        android:id="@+id/phoneInfoButton"
+        android:layout_below="@+id/cameraButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="READ CALENDAR"
+        android:id="@+id/readCalendarButton"
+        android:layout_alignBottom="@+id/phoneInfoButton"
+        android:layout_alignLeft="@+id/audioButton"
+        android:layout_alignStart="@+id/audioButton" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SMS"
+        android:id="@+id/smsButton"
+        android:layout_below="@+id/phoneInfoButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BODY SENSOR"
+        android:id="@+id/bodySensorButton"
+        android:layout_alignBottom="@+id/smsButton"
+        android:layout_alignLeft="@+id/readCalendarButton"
+        android:layout_alignStart="@+id/readCalendarButton" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TELEPHONE"
+        android:id="@+id/telephoneButton"
+        android:layout_below="@+id/smsButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
 </RelativeLayout>

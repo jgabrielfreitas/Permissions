@@ -6,16 +6,17 @@ import android.content.Context;
 import com.jgabrielfreitas.permissions.core.interfaces.OnPermissionRequest;
 
 /**
- * Created by JGabrielFreitas on 10/06/16.
+ * Created by JGabrielFreitas on 13/06/16.
  */
-public class CameraPermissionManager extends BasePermissionManager {
+public class AudioPermissionManager extends BasePermissionManager {
 
-    public CameraPermissionManager(Context context, OnPermissionRequest onPermissionRequest) {
+    public AudioPermissionManager(Context context, OnPermissionRequest onPermissionRequest) {
         super(context, onPermissionRequest);
     }
 
+    @Override
     public String getPermission() {
-        return Manifest.permission.CAMERA;
+        return Manifest.permission.RECORD_AUDIO;
     }
 
 }
