@@ -4,6 +4,8 @@
 [Runtime permissions] (https://developer.android.com/training/permissions/requesting.html) beginning in Android 6.0 (API level 23), users grant permissions to apps while the app is running, not when they install the app. This approach streamlines the app install process, since the user does not need to grant permissions when they install or update the app. It also gives the user more control over the app's functionality; for example, a user could choose to give a camera app access to the camera but not to the device location. The user can revoke the permissions at any time, by going to the app's Settings screen.
 
 Permissions is a library to make all easier permissions calls on Android.
+> This library use [Dexter library](https://github.com/Karumi/Dexter) under the hood.
+
 
 ## How to
 **Step 1.** Add the JitPack repository to your build file
@@ -23,17 +25,27 @@ dependencies {
 }
 ```
 
-#### Usage
+## Usage
 
 > Check the `app` module for a sample
 
+#### First of all
+In your `Application` extends `CorePermissionsApplication` to initialize [Dexter library](https://github.com/Karumi/Dexter)
 
-#### First of all implements `OnPermissionRequest`
+```java
+public class CustomApplication extends CorePermissionsApplication {
+	/*
+	 * the only thing this class does is call Dexter.initialize(context); in onCreate
+	 */
+}
+```
+
+#### In your `.class` implements `OnPermissionRequest`
 + `onPermissionAllowed()` - Permission allowed, be happy :grimacing:
 + `onPermissionDenied()` - Permission denied, this is not good :fire:
 + `onPermissionDeniedButAskAgain(PermissionToken token)` - The user don't allow your request permission, but you can ask again using `token.continuePermissionRequest();` until they click `never ask again`
 
-### Request Permission
+#### Request Permission
 
 A location example
 
@@ -75,6 +87,23 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+```
+---
+
+```
+Copyright 2015 Karumi
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
 ```
 
 
