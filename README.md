@@ -21,19 +21,17 @@ dependencies {
 }
 ```
 
-### Usage
+#### Usage
 
 > Check the `app` module for a sample
 
 
-1. **First of all** Implements `OnPermissionRequest`
+#### First of all implements `OnPermissionRequest`
 + `onPermissionAllowed()` - Permission allowed, be happy :grimacing:
 + `onPermissionDenied()` - Permission denied, this is not good :fire:
 + `onPermissionDeniedButAskAgain(PermissionToken token)` - The user don't allow your request permission, but you can ask again using `token.continuePermissionRequest();` until they click `never ask again`
 
-
-
-2. **Request** permission
+### Request Permission
 
 A location example
 
