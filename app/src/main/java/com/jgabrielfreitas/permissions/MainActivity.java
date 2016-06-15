@@ -5,24 +5,30 @@ import android.widget.Toast;
 
 import com.jgabrielfreitas.layoutid.activity.InjectLayoutBaseActivity;
 import com.jgabrielfreitas.layoutid.annotations.InjectLayout;
+import com.jgabrielfreitas.permissions.core.interfaces.OnMultiplePermissionRequest;
 import com.jgabrielfreitas.permissions.core.interfaces.OnPermissionRequest;
 import com.jgabrielfreitas.permissions.core.managers.AudioPermissionManager;
+import com.jgabrielfreitas.permissions.core.managers.BasePermissionManager;
 import com.jgabrielfreitas.permissions.core.managers.BodySensorPermissionManager;
 import com.jgabrielfreitas.permissions.core.managers.CalendarPermissionManager;
 import com.jgabrielfreitas.permissions.core.managers.CameraPermissionManager;
 import com.jgabrielfreitas.permissions.core.managers.ContactPermissionManager;
 import com.jgabrielfreitas.permissions.core.managers.LocationPermissionManager;
+import com.jgabrielfreitas.permissions.core.managers.MultiplePermissionManager;
 import com.jgabrielfreitas.permissions.core.managers.SmsPermissionManager;
 import com.jgabrielfreitas.permissions.core.managers.StoragePermissionManager;
 import com.jgabrielfreitas.permissions.core.managers.TelephonePermissionManager;
 import com.karumi.dexter.PermissionToken;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 
 @InjectLayout(layout = R.layout.activity_main)
-public class MainActivity extends InjectLayoutBaseActivity implements OnPermissionRequest {
+public class MainActivity extends InjectLayoutBaseActivity implements OnPermissionRequest, OnMultiplePermissionRequest {
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,6 +99,19 @@ public class MainActivity extends InjectLayoutBaseActivity implements OnPermissi
         bodySensorPermissionManager.requestPermission();
     }
 
+    @OnClick(R.id.multipleButton)
+    public void getMultiple() {
+        /**
+         *  Fills the managers list with the desired permissions .
+         */
+        List<BasePermissionManager> basePermissionManagers = new ArrayList<>();
+        basePermissionManagers.add(new SmsPermissionManager(this, this));
+        basePermissionManagers.add(new BodySensorPermissionManager(this, this));
+
+        MultiplePermissionManager multiplePermissionManager = new MultiplePermissionManager(this, this);
+        multiplePermissionManager.requestMultiplePermissions(basePermissionManagers);
+    }
+
     @Override
     public void onPermissionAllowed() {
         Toast.makeText(MainActivity.this, "permission Allowed - Be happy :) ", Toast.LENGTH_SHORT).show();
@@ -108,4 +127,10 @@ public class MainActivity extends InjectLayoutBaseActivity implements OnPermissi
         token.continuePermissionRequest();
     }
 
+    // Method in the event of denied permission to OnMultiplePermissionRequest.
+    @Override
+    public void onPermissionDenied(String name) {
+        String permission = String.format("permission %s Denied - Oh no... :( ", name);
+        Toast.makeText(MainActivity.this, permission, Toast.LENGTH_SHORT).show();
+    }
 }

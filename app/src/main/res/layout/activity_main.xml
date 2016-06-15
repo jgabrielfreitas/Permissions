@@ -32,57 +32,66 @@
         android:text="Location" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="MICROPHONE"
         android:id="@+id/audioButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/cameraButton"
+        android:layout_toEndOf="@+id/contactsButton"
         android:layout_toRightOf="@+id/contactsButton"
-        android:layout_toEndOf="@+id/contactsButton" />
+        android:text="MICROPHONE" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="PHONE"
         android:id="@+id/phoneInfoButton"
-        android:layout_below="@+id/cameraButton"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="READ CALENDAR"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/cameraButton"
+        android:text="PHONE" />
+
+    <Button
         android:id="@+id/readCalendarButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/phoneInfoButton"
         android:layout_alignLeft="@+id/audioButton"
-        android:layout_alignStart="@+id/audioButton" />
+        android:layout_alignStart="@+id/audioButton"
+        android:text="READ CALENDAR" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="SMS"
         android:id="@+id/smsButton"
-        android:layout_below="@+id/phoneInfoButton"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="BODY SENSOR"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/phoneInfoButton"
+        android:text="SMS" />
+
+    <Button
         android:id="@+id/bodySensorButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/smsButton"
         android:layout_alignLeft="@+id/readCalendarButton"
-        android:layout_alignStart="@+id/readCalendarButton" />
+        android:layout_alignStart="@+id/readCalendarButton"
+        android:text="BODY SENSOR" />
 
     <Button
+        android:id="@+id/telephoneButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TELEPHONE"
-        android:id="@+id/telephoneButton"
-        android:layout_below="@+id/smsButton"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/smsButton"
+        android:text="TELEPHONE" />
+
+    <Button
+        android:id="@+id/multipleButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/telephoneButton"
+        android:text="MULTIPLES" />
 
 </RelativeLayout>
