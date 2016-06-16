@@ -16,8 +16,8 @@ import com.karumi.dexter.listener.single.PermissionListener;
  */
 public class Permissions implements PermissionListener {
 
-    Context context;
-    OnPermissionRequest onPermissionRequest;
+    private Context context;
+    private OnPermissionRequest onPermissionRequest;
 
     public Permissions(Context context, OnPermissionRequest onPermissionRequest) {
         this.context = context;
