@@ -41,6 +41,8 @@ public class CustomApplication extends CorePermissionsApplication {
 ```
 
 #### In your `.java` implements `OnPermissionRequest`
+Your class will implement the following methods:
+
 + `onPermissionAllowed()` - Permission allowed, be happy :grimacing:
 + `onPermissionDenied()` - Permission denied, this is not good :fire:
 + `onPermissionDeniedButAskAgain(PermissionToken token)` - The user don't allow your request permission, but you can ask again using `token.continuePermissionRequest();` until they click `never ask again`
