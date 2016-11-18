@@ -64,6 +64,21 @@ locationPermissionManager.requestPermission();
 
 The Dialog asking permission appears at this moment and you'll be called back when user tap at **DENY** or **ALLOW**.
 
+#### All managers
+
+Type | Manager
+--- | ---
+Audio | AudioPermissionManager
+BodySensor | BodySensorPermissionManager
+Calendar | CalendarPermissionManager
+Camera | CameraPermissionManager
+Contact | ContactPermissionManager
+Location | LocationPermissionManager
+Sms | SmsPermissionManager
+Storage | StoragePermissionManager
+Telephone | TelephonePermissionManager
+
+
 ---
 
 ### License
