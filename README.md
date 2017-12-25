@@ -1,7 +1,7 @@
 ![InjectLayout](imgs/permissions-header.png)
 
 ## About Permissions for Android
-[Runtime permissions] (https://developer.android.com/training/permissions/requesting.html) beginning in Android 6.0 (API level 23), users grant permissions to apps while the app is running, not when they install the app. This approach streamlines the app install process, since the user does not need to grant permissions when they install or update the app. It also gives the user more control over the app's functionality; for example, a user could choose to give a camera app access to the camera but not to the device location. The user can revoke the permissions at any time, by going to the app's Settings screen.
+[Runtime permissions](https://developer.android.com/training/permissions/requesting.html) beginning in Android 6.0 (API level 23), users grant permissions to apps while the app is running, not when they install the app. This approach streamlines the app install process, since the user does not need to grant permissions when they install or update the app. It also gives the user more control over the app's functionality; for example, a user could choose to give a camera app access to the camera but not to the device location. The user can revoke the permissions at any time, by going to the app's Settings screen.
 
 Permissions is a library to make all easier permissions calls on Android.
 > This library use [Dexter library](https://github.com/Karumi/Dexter) under the hood.
@@ -21,7 +21,7 @@ allprojects {
 **Step 2.** Add the dependency
 ```gradle
 dependencies {
-		compile 'com.github.jgabrielfreitas:Permissions:1.0.0'
+		compile 'com.github.jgabrielfreitas:Permissions:1.1.0'
 }
 ```
 
